@@ -24,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded;
     private bool bubbled;
 
+    //ksdjfbasdhbfsdbfhfsdfjbsdfksdfjbjfbsdkjfbsdkhjbfshjdsbf AAAAAAAAAAAAAAAAAAAAa
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
