@@ -23,11 +23,13 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isGrounded;
     private bool bubbled;
+    public Animator animator;
 
     //ksdjfbasdhbfsdbfhfsdfjbsdfksdfjbjfbsdkjfbsdkhjbfshjdsbf AAAAAAAAAAAAAAAAAAAAa
 
     private void Awake()
     {
+        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -36,9 +38,10 @@ public class PlayerMovement : MonoBehaviour
         Movement();
     }
 
+    public float bubblePos = -1.7f;
     private void Update()
     {
-        Vector3 spawnBubblePos = new Vector3(transform.position.x, transform.position.y - 1.7f, transform.position.z);
+        Vector3 spawnBubblePos = new Vector3(transform.position.x, transform.position.y + bubblePos, transform.position.z);
 
         CheckGround();
 
@@ -59,6 +62,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (isGrounded)
         {
+            animator.SetBool("isJumping", false);
             bubbled = false;
         }
     }
@@ -72,6 +76,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump(float jumpForce)
     {
+        animator.SetBool("isJumping", true);
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
     }
 
