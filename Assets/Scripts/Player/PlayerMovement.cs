@@ -25,7 +25,6 @@ public class PlayerMovement : MonoBehaviour
     private bool bubbled;
     public Animator animator;
 
-    //ksdjfbasdhbfsdbfhfsdfjbsdfksdfjbjfbsdkjfbsdkhjbfshjdsbf AAAAAAAAAAAAAAAAAAAAa
 
     private void Awake()
     {
@@ -62,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (isGrounded)
         {
-            animator.SetBool("isJumping", false);
+            //animator.SetBool("isJumping", false);
             bubbled = false;
         }
     }
@@ -76,12 +75,12 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump(float jumpForce)
     {
-        animator.SetBool("isJumping", true);
+        //animator.SetBool("isJumping", true);
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
     }
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawSphere(groundCheck.position, groundCheckRadius);
+        Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
     }
 }
