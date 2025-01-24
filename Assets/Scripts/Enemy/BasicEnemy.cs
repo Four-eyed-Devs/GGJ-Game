@@ -17,25 +17,20 @@ public class BasicEnemy : MonoBehaviour
         canTakeDamageFromBubble = true;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void TakeDamageFromBubble(float amount)
     {
         if (canTakeDamageFromBubble)
         {
             health -= amount;
-
             canTakeDamageFromBubble = false;
-
-            StartCoroutine(ResetDamageTimer());
 
             if (health <= 0)
             {
                 Destroy(gameObject);
+            }    
+            else
+            {
+                StartCoroutine(ResetDamageTimer());
             }
         }
     }
