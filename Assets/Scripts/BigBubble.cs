@@ -11,8 +11,8 @@ public class BigBubble : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {
+            FindObjectOfType<AudioManager>().Play("bubble_burst");
             col.gameObject.GetComponent<PlayerMovement>().Jump(bigJumpForce);
-
             Destroy(gameObject);
         }
     }
