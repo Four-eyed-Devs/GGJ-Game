@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 2
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -139,19 +139,19 @@ TextureImporter:
       name: Idle_copy_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 34
         y: 0
-        width: 540
+        width: 510
         height: 533
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4104b3b8691095f41aa0cc7fa9f81647
-      internalID: -2125137067
+      spriteID: c4cfb5c9493b4704bad7efc53e3610b7
+      internalID: -2029806780
       vertices: []
       indices: 
       edges: []
@@ -160,19 +160,19 @@ TextureImporter:
       name: Idle_copy_1
       rect:
         serializedVersion: 2
-        x: 684
+        x: 663
         y: 0
-        width: 535
+        width: 537
         height: 533
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d8c8c82bcb1d9d41a62dc69476441f1
-      internalID: 523154055
+      spriteID: ca282f0ed016943409e9ac1248ee4d36
+      internalID: 1964406285
       vertices: []
       indices: 
       edges: []
@@ -181,19 +181,19 @@ TextureImporter:
       name: Idle_copy_2
       rect:
         serializedVersion: 2
-        x: 1350
+        x: 1342
         y: 0
-        width: 488
+        width: 495
         height: 533
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a0c1770e443ef74380115e5949a3698
-      internalID: 1795057934
+      spriteID: 90a40732ad9bf7a4c8b0a5c95a6ea56d
+      internalID: -1925123194
       vertices: []
       indices: 
       edges: []
@@ -209,9 +209,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Idle_copy_0: -2125137067
-      Idle_copy_1: 523154055
-      Idle_copy_2: 1795057934
+      Idle_copy_0: -2029806780
+      Idle_copy_1: 1964406285
+      Idle_copy_2: -1925123194
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
