@@ -5,9 +5,14 @@ using UnityEngine;
 public class BasicEnemy : MonoBehaviour
 {
     [SerializeField]
-    protected float 
-        health,
-        damageTimer;
+    protected float health;
+
+    public float maxHealth;
+
+    [SerializeField]
+    protected float damageTimer;
+
+    public HealthBarBehaivour HealthBar;
 
     [SerializeField]
     private GameObject hitEffect;
@@ -18,6 +23,7 @@ public class BasicEnemy : MonoBehaviour
     void Start()
     {
         canTakeDamageFromBubble = true;
+        HealthBar.SetHealth(health, maxHealth);
     }
 
     public void TakeDamageFromBubble(float amount)
@@ -26,6 +32,7 @@ public class BasicEnemy : MonoBehaviour
         {
             health -= amount;
             canTakeDamageFromBubble = false;
+            HealthBar.SetHealth(health, maxHealth);
 
             StartCoroutine(ResetDamageTimer());
 
