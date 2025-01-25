@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 
+
+[RequireComponent(typeof(Seeker))]
 public class EnemyMovement : MonoBehaviour
 {
     public Transform player;
@@ -32,6 +34,7 @@ public class EnemyMovement : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        enemyGFX = transform;
     }
 
     void Update()
@@ -75,33 +78,53 @@ public class EnemyMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // if (player != null)
-        // {
-        //     float direction = player.position.x > transform.position.x ? 1 : -1;
-        //
-        //     rb.velocity = new Vector2(direction * speed, rb.velocity.y);
-        //
-        //     if (animator != null)
-        //     {
-        //         animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
-        //     }
-        //
-        //     Vector3 localScale = transform.localScale;
-        //     localScale.x = direction > 0 ? Mathf.Abs(localScale.x) : -Mathf.Abs(localScale.x);
-        //     transform.localScale = localScale;
-        // }
+        if (path == null) return;
+
+        if (currentWaypoint >= path.vectorPath.Count)
+        {
+            reachedEndOfPath = true;
+            rb.velocity = Vector2.zero; // Stop movement
+            return;
+        }
+
+        reachedEndOfPath = false;
+
+        // Movement logic
+        Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
+        Vector2 velocity = direction * speed * Time.fixedDeltaTime;
+        rb.velocity = velocity;
+
+        // Check if we've reached the next waypoint
+        float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
+        if (distance < nextWaypointDistance)
+        {
+            currentWaypoint++;
+        }
+
+        // Flip the sprite based on movement direction
+        if (velocity.x >= 0.01f)
+        {
+            enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
+        }
+        else if (velocity.x <= -0.01f)
+        {
+            enemyGFX.localScale = new Vector3(1f, 1f, 1f);
+        }
     }
-    
+
     private void UpdatePath()
     {
-        if (player != null)
-        {
-            Seeker seeker = GetComponent<Seeker>();
-            if (seeker.IsDone())
-            {
-                seeker.StartPath(GetComponent<Rigidbody2D>().position, player.position, OnPathComplete);
-            }
-        }
+         if (player != null)
+         {
+             float distanceToPlayer = Vector2.Distance(rb.position, player.position);
+                if (distanceToPlayer < 20f)
+                {
+                 if (seeker.IsDone())
+                    {
+                        seeker.StartPath(rb.position, player.position, OnPathComplete);
+                    }
+                }
+         }
     }
     
     private void OnPathComplete(Path p)
