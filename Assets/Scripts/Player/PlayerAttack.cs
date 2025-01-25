@@ -35,6 +35,7 @@ public class PlayerAttack : MonoBehaviour
             {
                 bubblesVFX.Play();
             }
+            pm.GetAttackAnimIn();
         }
         else // Mouse button is not held down
         {
@@ -50,6 +51,7 @@ public class PlayerAttack : MonoBehaviour
             {
                 bubblesVFX.Stop();
             }
+            pm.GetAttackAnimOut();
         }
     }
 }
