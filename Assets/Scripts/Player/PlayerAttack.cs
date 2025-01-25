@@ -8,6 +8,8 @@ public class PlayerAttack : MonoBehaviour
     private GameObject bubbleWeapon;
 
     private ParticleSystem bubblesVFX;
+    
+    public AudioClip bubblesVomit;
 
     private void Start()
     {
@@ -19,6 +21,7 @@ public class PlayerAttack : MonoBehaviour
         if(Input.GetMouseButton(0))
         {
             bubbleWeapon.SetActive(true);
+            //bubblesVFX.Play();
             if (!bubblesVFX.isPlaying)
             {
                 bubblesVFX.Play();
