@@ -24,7 +24,10 @@ public class EyeFootBoss : MonoBehaviour
 
     void Update()
     {
-        FlipTowardsPlayer();
+        if (player != null)
+        {
+            FlipTowardsPlayer();
+        }
     }
 
     private void FlipTowardsPlayer()
