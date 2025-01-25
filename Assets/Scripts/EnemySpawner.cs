@@ -3,7 +3,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     private int spawnedEnemies = 0;
-    public int numberOfEnemiesToSpawn = 3; 
+    public int numberOfEnemiesToSpawn = 3;
     public GameObject enemyPrefab;
     public Transform[] spawnPoints;
     public float spawnDelay = 3f;
@@ -14,9 +14,13 @@ public class EnemySpawner : MonoBehaviour
 
     void Update()
     {
-        if (Time.time > nextSpawnTime && Vector3.Distance(player.position, transform.position) <= spawnRadius)
+        // Calculate 2D distance
+        float distanceToPlayer = Vector2.Distance(player.position, transform.position);
+        Debug.Log($"Time: {Time.time}, Next Spawn: {nextSpawnTime}, Distance: {distanceToPlayer}");
+
+        if (Time.time > nextSpawnTime && distanceToPlayer <= spawnRadius)
         {
-            Debug.Log("Should SPAWN!");
+            Debug.Log("Player is within range. Spawning enemy...");
             SpawnEnemy();
             nextSpawnTime = Time.time + spawnDelay;
         }
@@ -34,7 +38,6 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

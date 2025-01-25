@@ -7,7 +7,7 @@ using Pathfinding;
 [RequireComponent(typeof(Seeker))]
 public class EnemyMovement : MonoBehaviour
 {
-    public Transform player;
+    private Transform player;
     private Transform enemyGFX;
 
     private Rigidbody2D rb;
