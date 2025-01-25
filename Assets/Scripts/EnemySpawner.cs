@@ -1,33 +1,43 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject swarmerPrefab;
+    private int spawnedEnemies = 0;
+    public int numberOfEnemiesToSpawn = 3; 
+    public GameObject enemyPrefab;
+    public Transform[] spawnPoints;
+    public float spawnDelay = 3f;
+    public Transform player;
+    public float spawnRadius = 20f;
 
-    
-    private int maxEnemies = 3;
-    private int currentEnemyCount = 0;
-    private float swarmerInterval = 3.5f;
+    private float nextSpawnTime;
 
-    // Start is called before the first frame update
-    void Start()
+    void Update()
     {
-        StartCoroutine(spawnEnemy(swarmerInterval, swarmerPrefab));
+        if (Time.time > nextSpawnTime && Vector3.Distance(player.position, transform.position) <= spawnRadius)
+        {
+            Debug.Log("Should SPAWN!");
+            SpawnEnemy();
+            nextSpawnTime = Time.time + spawnDelay;
+        }
     }
 
-    private IEnumerator spawnEnemy(float interval, GameObject enemy)
+    void SpawnEnemy()
     {
-        while (currentEnemyCount < maxEnemies)
+        Debug.Log($"Trying to spawn enemy. Spawned: {spawnedEnemies}/{numberOfEnemiesToSpawn}");
+        if (numberOfEnemiesToSpawn > spawnedEnemies)
         {
-            yield return new WaitForSeconds(interval);
-
-            GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-5f, 5), Random.Range(-6f, 6f), 0), Quaternion.identity);
-            currentEnemyCount++;
-
-            StartCoroutine(spawnEnemy(interval, enemy));
+            Debug.Log("SPAWNED ENEMY!");
+            spawnedEnemies++;
+            int spawnIndex = Random.Range(0, spawnPoints.Length);
+            Instantiate(enemyPrefab, spawnPoints[spawnIndex].position, spawnPoints[spawnIndex].rotation);
         }
+    }
+
+    
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, spawnRadius);
     }
 }
