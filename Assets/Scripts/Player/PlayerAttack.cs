@@ -10,6 +10,8 @@ public class PlayerAttack : MonoBehaviour
     private PlayerMovement pm;
 
     private ParticleSystem bubblesVFX;
+    
+    public AudioClip bubblesVomit;
 
     private void Start()
     {
