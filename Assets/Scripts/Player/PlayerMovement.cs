@@ -43,6 +43,8 @@ public class PlayerMovement : MonoBehaviour
         Vector3 spawnBubblePos = new Vector3(transform.position.x, transform.position.y + bubblePos, transform.position.z);
 
         CheckGround();
+        animator.SetBool("isGrounded", isGrounded);
+        animator.SetBool("hasBubbleJumped", bubbled);
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
@@ -61,7 +63,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (isGrounded)
         {
-            //animator.SetBool("isJumping", false);
             bubbled = false;
         }
     }
@@ -70,15 +71,18 @@ public class PlayerMovement : MonoBehaviour
     {
         float inputX = Input.GetAxis("Horizontal");
 
-        if (inputX != 0)
+        if (isGrounded)
         {
-            animator.SetBool("isIdle", false);
-            animator.SetBool("isMoving", true);
-        }
-        else
-        {
-            animator.SetBool("isIdle", true);
-            animator.SetBool("isMoving", false);
+            if (inputX != 0)
+            {
+                animator.SetBool("isIdle", false);
+                animator.SetBool("isMoving", true);
+            }
+            else
+            {
+                animator.SetBool("isIdle", true);
+                animator.SetBool("isMoving", false);
+            }
         }
 
         rb.velocity = new Vector2(inputX * speed, rb.velocity.y);
@@ -100,8 +104,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump(float jumpForce)
     {
-        //animator.SetBool("isJumping", true);
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        SetJumpAnim();
     }
 
     public void GetAttackAnimIn()
@@ -114,6 +118,28 @@ public class PlayerMovement : MonoBehaviour
     public void GetAttackAnimOut()
     {
         animator.SetBool("isAttacking", false);
+    }
+
+    private void SetJumpAnim()
+    {
+        animator.SetBool("isIdle", false);
+        animator.SetBool("isMoving", false);
+    }
+
+
+    public void RestartJumpLoop()
+    {
+        animator.Play("Jump", 0, 0.3f);
+    }
+
+    public void RestartBubbleJumpLoop()
+    {
+        animator.Play("BubbleJump", 0, 0.4f);
+    } 
+
+    public void SetHasBubbleJumped()
+    {
+        animator.SetBool("hasBubbleJumped", bubbled);
     }
 
     private void OnDrawGizmos()
