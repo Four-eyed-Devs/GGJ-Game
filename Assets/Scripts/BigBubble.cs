@@ -11,7 +11,10 @@ public class BigBubble : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {
-            col.gameObject.GetComponent<PlayerMovement>().Jump(bigJumpForce);
+            PlayerMovement player = col.gameObject.GetComponent<PlayerMovement>();
+
+            player.Jump(bigJumpForce);
+            player.SetHasBubbleJumped();
 
             Destroy(gameObject);
         }
