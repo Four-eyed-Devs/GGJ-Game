@@ -9,6 +9,9 @@ public class BasicEnemy : MonoBehaviour
         health,
         damageTimer;
 
+    [SerializeField]
+    private GameObject hitEffect;
+
     protected bool canTakeDamageFromBubble;
 
     // Start is called before the first frame update
@@ -24,14 +27,17 @@ public class BasicEnemy : MonoBehaviour
             health -= amount;
             canTakeDamageFromBubble = false;
 
+            StartCoroutine(ResetDamageTimer());
+
+            if (hitEffect != null)
+            {
+                Instantiate(hitEffect, transform.position, Quaternion.identity);
+            }
+
             if (health <= 0)
             {
                 Destroy(gameObject);
             }    
-            else
-            {
-                StartCoroutine(ResetDamageTimer());
-            }
         }
     }
 
