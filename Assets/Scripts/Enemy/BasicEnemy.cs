@@ -18,8 +18,6 @@ public class BasicEnemy : MonoBehaviour
     private GameObject hitEffect;
 
     protected bool canTakeDamageFromBubble;
-
-    // Start is called before the first frame update
     void Start()
     {
         canTakeDamageFromBubble = true;
@@ -43,7 +41,14 @@ public class BasicEnemy : MonoBehaviour
 
             if (health <= 0)
             {
-                Destroy(gameObject);
+                if (transform.parent != null)
+                {
+                    Destroy(transform.parent.gameObject);
+                }
+                else
+                {
+                    Destroy(gameObject);
+                }
             }    
         }
     }
