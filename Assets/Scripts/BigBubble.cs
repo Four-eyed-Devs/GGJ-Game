@@ -6,6 +6,7 @@ public class BigBubble : MonoBehaviour
 {
     [SerializeField]
     private float bigJumpForce;
+    
 
     private void OnCollisionEnter2D(Collision2D col)
     {
@@ -16,6 +17,7 @@ public class BigBubble : MonoBehaviour
             player.Jump(bigJumpForce);
             player.SetHasBubbleJumped();
 
+            FindObjectOfType<AudioManager>().Play("burst");
             Destroy(gameObject);
         }
     }

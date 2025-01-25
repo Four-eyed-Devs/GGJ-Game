@@ -321,6 +321,63 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &704922479
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 704922481}
+  - component: {fileID: 704922480}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &704922480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704922479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb5cc2849fea20f45aaebbfc3e4c420f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - audioClip: {fileID: 8300000, guid: 26fe4991404ea1940b1e2a1d9d0a578d, type: 3}
+    name: bubble_vomit
+    volume: 1
+    pitch: 1.11
+    loop: 0
+    source: {fileID: 0}
+  - audioClip: {fileID: 8300000, guid: 8ef60ad5c7c09354db0edef918853fd5, type: 3}
+    name: burst
+    volume: 1
+    pitch: 1.11
+    loop: 0
+    source: {fileID: 0}
+--- !u!4 &704922481
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704922479}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &750915436
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,7 +577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubbleWeapon: {fileID: 1642732223}
-  bubblesVomit: {fileID: 0}
+  audioManager: {fileID: 704922480}
 --- !u!95 &750915443
 Animator:
   serializedVersion: 5
@@ -1393,6 +1450,7 @@ CircleCollider2D:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 704922481}
   - {fileID: 1740732251}
   - {fileID: 519420032}
   - {fileID: 750915441}

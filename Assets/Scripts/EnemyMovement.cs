@@ -20,7 +20,7 @@ public class EnemyMovement : MonoBehaviour
     private Path path;
     public float nextWaypointDistance = 3f;
     private int currentWaypoint = 0;
-    private bool reachedEndOfPath = false;
+    //private bool reachedEndOfPath = false;
 
     void Start()
     {
@@ -46,13 +46,11 @@ public class EnemyMovement : MonoBehaviour
 
         if (currentWaypoint >= path.vectorPath.Count)
         {
-            reachedEndOfPath = true;
+            //reachedEndOfPath = true;
             return;
         }
-        else
-        {
-            reachedEndOfPath = false;
-        }
+        
+        //reachedEndOfPath = false;
         
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
         Vector2 force = direction * speed *Time.deltaTime;
@@ -82,12 +80,12 @@ public class EnemyMovement : MonoBehaviour
 
         if (currentWaypoint >= path.vectorPath.Count)
         {
-            reachedEndOfPath = true;
+            //reachedEndOfPath = true;
             rb.velocity = Vector2.zero; // Stop movement
             return;
         }
 
-        reachedEndOfPath = false;
+        //reachedEndOfPath = false;
 
         // Movement logic
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
@@ -119,10 +117,10 @@ public class EnemyMovement : MonoBehaviour
              float distanceToPlayer = Vector2.Distance(rb.position, player.position);
                 if (distanceToPlayer < 20f)
                 {
-                 if (seeker.IsDone())
-                    {
-                        seeker.StartPath(rb.position, player.position, OnPathComplete);
-                    }
+                     if (seeker.IsDone())
+                     {
+                         seeker.StartPath(rb.position, player.position, OnPathComplete);
+                     }
                 }
          }
     }
