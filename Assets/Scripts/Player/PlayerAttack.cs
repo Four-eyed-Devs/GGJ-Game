@@ -25,20 +25,20 @@ public class PlayerAttack : MonoBehaviour
         if(Input.GetMouseButton(0))
         {
             bubbleWeapon.SetActive(true);
-            pm.GetAttackAnimIn();
             if (!bubblesVFX.isPlaying)
             {
                 bubblesVFX.Play();
             }
+            pm.GetAttackAnimIn();
         }
         else
         {
             bubbleWeapon.SetActive(false);
-            pm.GetAttackAnimOut();
             if (bubblesVFX.isPlaying)
             {
                 bubblesVFX.Stop();
             }
+            pm.GetAttackAnimOut();
         }
     }
 }
