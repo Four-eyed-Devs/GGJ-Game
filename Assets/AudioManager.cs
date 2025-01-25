@@ -4,28 +4,31 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public Sound[] sounds;
-    
     public static AudioManager instance;
+    
+    public Sound[] sounds;
+
     void Awake()
     {
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject); // Prevent destruction on scene changes
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(gameObject); // Ensure only one instance exists
             return;
         }
-        DontDestroyOnLoad(this);
-        foreach (Sound s in sounds) 
+
+        foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.audioClip;
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
-        }   
+            s.source.loop = s.loop;
+        }
     }
 
     public void Play(string name)
@@ -36,7 +39,6 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Sound: " + name + " not found!");
             return;
         }
-        s.source.loop = true; // Enable looping
         s.source.Play();
     }
 
@@ -48,7 +50,6 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Sound: " + name + " not found!");
             return;
         }
-        s.source.loop = false; // Disable looping when stopped
         s.source.Stop();
     }
 
