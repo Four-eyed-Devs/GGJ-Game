@@ -47,6 +47,16 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    public void HealDamage(float amount)
+    {
+        health += amount;
+
+        if (health > maxHealth)
+        {
+            health = maxHealth; 
+        }
+    }
+
     private IEnumerator IFrames()
     {
         canTakeDamage = false;
