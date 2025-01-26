@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BasicEnemy : MonoBehaviour
-{
+{  
     [SerializeField]
     protected float health;
 
@@ -41,15 +41,21 @@ public class BasicEnemy : MonoBehaviour
 
             if (health <= 0)
             {
-                if (transform.parent != null)
-                {
-                    Destroy(transform.parent.gameObject);
-                }
-                else
-                {
-                    Destroy(gameObject);
-                }
+                OnKill();
             }    
+        }
+    }
+
+    private void OnKill()
+    {
+        if (transform.parent != null)
+        {
+            Destroy(transform.parent.gameObject);
+        }
+        else
+        {
+            GameManager.Instance.EnemyDefeated();
+            Destroy(gameObject);
         }
     }
 
