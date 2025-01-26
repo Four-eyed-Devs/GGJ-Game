@@ -11,6 +11,7 @@ public class Puddle : MonoBehaviour
 
     private void Start()
     {
+        FindObjectOfType<AudioManager>().Play("straw");
         Destroy(gameObject, destroyTimer);
     }
 
