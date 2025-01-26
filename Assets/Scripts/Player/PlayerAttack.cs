@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
@@ -8,10 +7,7 @@ public class PlayerAttack : MonoBehaviour
     private GameObject bubbleWeapon;
 
     private PlayerMovement pm;
-
     private ParticleSystem bubblesVFX;
-
-    public AudioManager audioManager;
 
     private void Start()
     {
@@ -21,9 +17,12 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
+        // Get the AudioManager instance dynamically
+        AudioManager audioManager = FindObjectOfType<AudioManager>();
+
         if (Input.GetMouseButton(0)) // Mouse button is held down
         {
-            if (!audioManager.IsPlaying("bubble_vomit")) // Check if sound is already playing
+            if (audioManager != null && !audioManager.IsPlaying("bubble_vomit")) // Check if sound is already playing
             {
                 audioManager.Play("bubble_vomit"); // Play sound (should be set to loop in AudioManager)
             }
@@ -35,11 +34,10 @@ public class PlayerAttack : MonoBehaviour
             {
                 bubblesVFX.Play();
             }
-            pm.GetAttackAnimIn();
         }
         else // Mouse button is not held down
         {
-            if (audioManager.IsPlaying("bubble_vomit"))
+            if (audioManager != null && audioManager.IsPlaying("bubble_vomit"))
             {
                 audioManager.Stop("bubble_vomit"); // Stop looping sound
             }
@@ -51,7 +49,6 @@ public class PlayerAttack : MonoBehaviour
             {
                 bubblesVFX.Stop();
             }
-            pm.GetAttackAnimOut();
         }
     }
 }
