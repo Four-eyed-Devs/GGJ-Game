@@ -16,8 +16,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private Transform doorSpawnPoint; // Optional: Assign the door's spawn location in the Inspector
-
-    private int defeatCount;
+    
     private bool doorSpawned = false;
     public int defeatCount;
 
