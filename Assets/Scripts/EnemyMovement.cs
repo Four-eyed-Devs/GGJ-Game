@@ -27,7 +27,7 @@ public class EnemyMovement : MonoBehaviour
         seeker = GetComponent<Seeker>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         
-        InvokeRepeating("UpdatePath", 0f, 0.25f);
+        InvokeRepeating("UpdatePath", 0f, 0.1f);
     }
 
     private void Awake()
