@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 95c6ec5b6641cfe499dab1101e416292
+guid: 4ebe44162eaf03047b6b238bb4069025
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,64 +136,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle_copy_0
+      name: walking_duck_5_frames2_0
       rect:
         serializedVersion: 2
-        x: 30
+        x: 0
         y: 0
-        width: 508
-        height: 533
+        width: 500
+        height: 499
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf10629bb7721934cab6f5e47942a687
-      internalID: -1766504660
+      spriteID: 93deafac730a95948af8c3b7ee1f7985
+      internalID: -1402224268
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_copy_1
+      name: walking_duck_5_frames2_1
       rect:
         serializedVersion: 2
-        x: 691
+        x: 570
         y: 0
-        width: 513
-        height: 533
+        width: 521
+        height: 499
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 933fad87c276dcc4db6796b33c2af3e2
-      internalID: 954750763
+      spriteID: 0a0c4ee41cf03d94eae53d39baa46319
+      internalID: -1852094900
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_copy_2
+      name: walking_duck_5_frames2_2
       rect:
         serializedVersion: 2
-        x: 1353
+        x: 1168
         y: 0
-        width: 484
-        height: 533
+        width: 558
+        height: 499
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b48792b5752e7d42ac756e2141532b0
-      internalID: -198137938
+      spriteID: 65f074aef4a3cb340aa4b959b85bafb2
+      internalID: -1963168814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walking_duck_5_frames2_3
+      rect:
+        serializedVersion: 2
+        x: 1806
+        y: 0
+        width: 533
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 270743b23f53653479f2ccc62054e77f
+      internalID: 932216904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walking_duck_5_frames2_4
+      rect:
+        serializedVersion: 2
+        x: 2498
+        y: 0
+        width: 538
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2737b2d7dd63e24b8b5a81cad9353f9
+      internalID: -384854508
       vertices: []
       indices: 
       edges: []
@@ -209,9 +251,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Idle_copy_0: -1766504660
-      Idle_copy_1: 954750763
-      Idle_copy_2: -198137938
+      walking_duck_5_frames2_0: -1402224268
+      walking_duck_5_frames2_1: -1852094900
+      walking_duck_5_frames2_2: -1963168814
+      walking_duck_5_frames2_3: 932216904
+      walking_duck_5_frames2_4: -384854508
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

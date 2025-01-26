@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 09ca1120517526e44a7edccc0699b301
+guid: c2f13c1f26bade74c857911a9c03c31f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -136,85 +136,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: noot_noot_atack_blop_0
+      name: jump 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 671
-        height: 542
+        width: 541
+        height: 571
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8fb4f5c1fe9cef740877d96cdcdcf2a1
-      internalID: -1750105150
+      spriteID: 777b670c88c21b943a1853ad122c2e25
+      internalID: -1718520299
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: noot_noot_atack_blop_1
+      name: jump 1_1
       rect:
         serializedVersion: 2
-        x: 750
+        x: 607
         y: 0
-        width: 646
-        height: 542
+        width: 547
+        height: 571
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 879b59803622a0b4ea1cf32522d5b9a7
-      internalID: -55483009
+      spriteID: 3c696ef1191cc9f468f91a2d907f3011
+      internalID: 362353297
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: noot_noot_atack_blop_2
+      name: jump 1_2
       rect:
         serializedVersion: 2
-        x: 1481
+        x: 1238
         y: 0
-        width: 664
-        height: 542
+        width: 544
+        height: 571
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 450a5d15ab6b7f24996e5e1807e21a81
-      internalID: 1934400899
+      spriteID: e13623231a3d9994d9fea133c510737a
+      internalID: 1583785202
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: noot_noot_atack_blop_3
+      name: jump 1_3
       rect:
         serializedVersion: 2
-        x: 2257
+        x: 1863
         y: 0
-        width: 651
-        height: 542
+        width: 497
+        height: 571
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9ca95313939b5149805e13c6d2f38e9
-      internalID: 1230068898
+      spriteID: 63661f9e425c6784fbc517586012a413
+      internalID: 535883279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump 1_4
+      rect:
+        serializedVersion: 2
+        x: 2408
+        y: 0
+        width: 511
+        height: 571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b8d95d46cbfdd94dad46da058bd355b
+      internalID: -499579918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump 1_5
+      rect:
+        serializedVersion: 2
+        x: 3008
+        y: 0
+        width: 514
+        height: 571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70b2c08f01158d34fb714d5bb4d311d6
+      internalID: 381223931
       vertices: []
       indices: 
       edges: []
@@ -230,10 +272,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      noot_noot_atack_blop_0: -1750105150
-      noot_noot_atack_blop_1: -55483009
-      noot_noot_atack_blop_2: 1934400899
-      noot_noot_atack_blop_3: 1230068898
+      jump 1_0: -1718520299
+      jump 1_1: 362353297
+      jump 1_2: 1583785202
+      jump 1_3: 535883279
+      jump 1_4: -499579918
+      jump 1_5: 381223931
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
