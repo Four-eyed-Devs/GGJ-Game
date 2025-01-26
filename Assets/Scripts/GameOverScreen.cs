@@ -6,9 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class GameOverScreen : MonoBehaviour
 {
+
    public void Setup()
     {
         gameObject.SetActive(true);
+        BackgroundMusicController.instance.StopMusic();
     }
 
     public void RetryBtn()
