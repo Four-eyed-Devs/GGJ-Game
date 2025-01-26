@@ -19,7 +19,6 @@ public class PlayerHealth : MonoBehaviour
 
     private bool canTakeDamage = true;
 
-    // Start is called before the first frame update
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -27,7 +26,6 @@ public class PlayerHealth : MonoBehaviour
         maxHealth = health;
     }
 
-    // Update is called once per frame
     void Update()
     {
         PlayerHealthBar.value = Mathf.Clamp(health / maxHealth, 0, 1);
