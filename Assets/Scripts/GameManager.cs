@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private int countToNextLevel;
 
-    private int defeatCount;
+    public int defeatCount;
 
     void Start()
     {
