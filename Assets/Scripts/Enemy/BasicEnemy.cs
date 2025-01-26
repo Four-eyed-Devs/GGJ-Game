@@ -50,6 +50,7 @@ public class BasicEnemy : MonoBehaviour
     {
         if (transform.parent != null)
         {
+            GameManager.Instance.EnemyDefeated();
             Destroy(transform.parent.gameObject);
         }
         else

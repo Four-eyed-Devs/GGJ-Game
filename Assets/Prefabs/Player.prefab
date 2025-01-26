@@ -277,7 +277,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubbleWeapon: {fileID: 7388749709680514890}
-  audioManager: {fileID: 0}
 --- !u!114 &1464055713572260739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -440,7 +439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33a85a48e45113e4e88998ee882d8c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 2
 --- !u!1001 &3497566678305447035
 PrefabInstance:
   m_ObjectHideFlags: 0

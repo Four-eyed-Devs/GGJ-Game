@@ -437,6 +437,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2114271766}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &143662533
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 143662534}
+  m_Layer: 0
+  m_Name: Door Pos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &143662534
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143662533}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.84, y: -3.25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &200024771
 GameObject:
   m_ObjectHideFlags: 0
@@ -1114,6 +1145,54 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 61.372116, y: 16.502193}
   m_EdgeRadius: 0
+--- !u!1 &627545899
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 627545901}
+  - component: {fileID: 627545900}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &627545900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627545899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd11bfa7deb0a69448f387beeccb0999, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countToNextLevel: 40
+  doorPrefab: {fileID: 6002921419185209964, guid: 9d9ac9df7ac0d1c41947f16f2749ee33, type: 3}
+  doorSpawnPoint: {fileID: 143662534}
+  defeatCount: 0
+--- !u!4 &627545901
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627545899}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.2691536, y: 3.5642896, z: -113.82692}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &657868555
 GameObject:
   m_ObjectHideFlags: 0
@@ -2230,8 +2309,7 @@ Transform:
   m_LocalPosition: {x: 3.26, y: 7.69, z: 0}
   m_LocalScale: {x: 7.0972, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2114271766}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &984494536
@@ -4924,12 +5002,12 @@ Transform:
   m_GameObject: {fileID: 2114271765}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.37, y: -13.8, z: 0}
-  m_LocalScale: {x: 0.14090063, y: 1, z: 1}
+  m_LocalPosition: {x: 12.983164, y: -6.11, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 134715886}
-  m_Father: {fileID: 958280027}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2114271767
 MonoBehaviour:
@@ -4948,7 +5026,7 @@ MonoBehaviour:
   spawnPoints:
   - {fileID: 134715886}
   spawnDelay: 3
-  player: {fileID: 0}
+  player: {fileID: 1357495040}
   spawnRadius: 20
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -4956,6 +5034,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 2100802312}
   - {fileID: 2079444635}
+  - {fileID: 627545901}
   - {fileID: 708580740}
   - {fileID: 1876131743}
   - {fileID: 872727550}
@@ -4976,5 +5055,7 @@ SceneRoots:
   - {fileID: 565978716}
   - {fileID: 488246277}
   - {fileID: 482212326}
+  - {fileID: 2114271766}
   - {fileID: 1733614096}
   - {fileID: 958280027}
+  - {fileID: 143662534}
