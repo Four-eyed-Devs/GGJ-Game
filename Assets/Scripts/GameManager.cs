@@ -10,17 +10,24 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private int countToNextLevel;
 
+    [SerializeField]
+    private GameObject doorPrefab; // Assign your door prefab in the Inspector
+
+    [SerializeField]
+    private Transform doorSpawnPoint; // Optional: Assign the door's spawn location in the Inspector
+
     private int defeatCount;
+    private bool doorSpawned = false;
 
     void Start()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
         }
         else
         {
-            Destroy(Instance);
+            Destroy(gameObject);
         }
     }
 
@@ -28,15 +35,24 @@ public class GameManager : MonoBehaviour
     {
         defeatCount++;
 
-        if(defeatCount == countToNextLevel)
+        if (defeatCount == countToNextLevel && !doorSpawned)
         {
-            LoadNextScene();
+            SpawnDoor();
         }
     }
 
-    private void LoadNextScene()
+    private void SpawnDoor()
     {
-        Debug.Log("Go to next room!");
-        SceneManager.LoadScene("BossRoom");
+        if (doorSpawnPoint != null)
+        {
+            Instantiate(doorPrefab, doorSpawnPoint.position, Quaternion.identity);
+        }
+        else
+        {
+            // Default to the center of the room if no spawn point is set
+            Instantiate(doorPrefab, Vector3.zero, Quaternion.identity);
+        }
+
+        doorSpawned = true;
     }
 }
